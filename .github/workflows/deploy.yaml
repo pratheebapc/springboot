@@ -18,4 +18,4 @@ jobs:
 
     - name: Deploy with Helm
       run: |
-        helm upgrade --install spring 
+        helm upgrade --install spring spring/demochart
