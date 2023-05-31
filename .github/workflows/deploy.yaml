@@ -1,0 +1,23 @@
+name: OpenShift Deployment
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Log in to OpenShift cluster
+      run: oc login https://api.zagaopenshift.zagaopensource.com:6443 --token=sha256~6FcUO89AVR2Wms40TOxl_NXKN1IXf1W469BsiiWYR9Q
+
+    - name: Deploy to OpenShift
+      run: oc apply -f path/to/openshift-manifests/
+
+    - name: Wait for deployment rollout
+      run: oc rollout status deployment/<deployment-name>
