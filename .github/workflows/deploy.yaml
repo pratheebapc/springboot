@@ -17,7 +17,6 @@ jobs:
       run: oc login https://api.zagaopenshift.zagaopensource.com:6443 --token=sha256~6FcUO89AVR2Wms40TOxl_NXKN1IXf1W469BsiiWYR9Q
 
     - name: Deploy to OpenShift
-      run: oc apply -f path/to/openshift-manifests/
+      run: oc apply -f ../../oc_resources/deployment.yaml
 
-    - name: Wait for deployment rollout
-      run: oc rollout status deployment/<deployment-name>
+ 
