@@ -17,6 +17,6 @@ jobs:
       run: oc login https://api.zagaopenshift.zagaopensource.com:6443 -u zaga-admin -p Zaga@2023$ --insecure-skip-tls-verify
 
     - name: Deploy to OpenShift
-      run: oc apply -f ./../../oc_resources/deployment.yaml
+      run: oc apply -f oc_resources/deployment.yaml
 
  
